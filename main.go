@@ -24,9 +24,9 @@ func getTodos(context *gin.Context) {
 }
 
 func getTodoByID(id string) (*todo, error) {
-	for _, v := range todos {
+	for i, v := range todos {
 		if v.ID == id {
-			return &v, nil
+			return &todos[i], nil
 		}
 	}
 	return nil, errors.New("todo not found")
